@@ -1,0 +1,17 @@
+Evento
+POST - Criar um evento
+GET - Obter todos os eventos
+GET/{Id} - Obter um evento específico
+PUT/{id} - Atualizar um evento específico
+DELETE/{id} - Deletar um evento específico
+
+Tipo Evento
+POST - Criar um tipo de evento
+GET - Obter todos os tipos de eventos
+PUT/{id} - Atualizar um tipo de evento  específico
+DELETE/{id} - Deletar um tipo de evento específico
+
+Lembrete
+GET{data inicio}/{data fim} - Filtrar intervalo de tempo
+PUT/{id} - Atualizar um lembrete específico
+DELETE/{id} - Deletar um lembrete específico
