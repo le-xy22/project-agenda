@@ -1,19 +1,20 @@
 EVENTO:
-EventRepository
-EventService
-EventController
-TestsEventService
+EventoDto
+EventoRepository
+Event0Service
+EventoController
+TestsEventoService
 
 TIPO EVENTO:
-TypeEventDto
-TypeEventRepository
-TypeEventService
-TypeEventController
-TestsTypeEventService
+TipoEventoDto
+TipoEventoRepository
+TipoEventoService
+TipoEventoController
+TestsTipoEventoTypeEventService
 
 LEMBRETE:
-ReminderDto
-ReminderRepository 
-ReminderService
-ReminderController
-TestsReminderService
+LembreteDto
+LembreteRepository 
+LembreteService
+LembreteController
+TestsLembreteService
