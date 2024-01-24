@@ -1,11 +1,3 @@
-create table pessoa(
- id INT AUTO_INCREMENT PRIMARY KEY, 
- nome varchar(100) not null,
- evento_nome varchar(100) not null,
- evento_hora DATETIME not null,
- FOREIGN KEY (evento_hora_pessoa) REFERENCES lembrete(data_hora_evento));
- FOREIGN KEY (evento_nome_pessoa) REFERENCES tipo_evento(nome));
-
 create table evento (
 id INT AUTO_INCREMENT PRIMARY KEY, 
 titulo varchar(100) not null,
