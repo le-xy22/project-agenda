@@ -12,6 +12,7 @@ PUT/{id} - Atualizar um tipo de evento  específico
 DELETE/{id} - Deletar um tipo de evento específico
 
 Lembrete
+POST - Criar um lembrete
 GET{data inicio}/{data fim} - Filtrar intervalo de tempo
 PUT/{id} - Atualizar um lembrete específico
 DELETE/{id} - Deletar um lembrete específico
