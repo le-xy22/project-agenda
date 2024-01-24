@@ -1,0 +1,19 @@
+EVENTO:
+EventRepository
+EventService
+EventController
+TestsEventService
+
+TIPO EVENTO:
+TypeEventDto
+TypeEventRepository
+TypeEventService
+TypeEventController
+TestsTypeEventService
+
+LEMBRETE:
+ReminderDto
+ReminderRepository 
+ReminderService
+ReminderController
+TestsReminderService
