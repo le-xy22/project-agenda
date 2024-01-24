@@ -1,7 +1,7 @@
 EVENTO:
 EventoDto
 EventoRepository
-Event0Service
+EventoService
 EventoController
 TestsEventoService
 
