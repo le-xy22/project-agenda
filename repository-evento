@@ -1,0 +1,82 @@
+Repositorio Evento
+
+ public async Task CriarEventoAsync(EventoDto eventoDto)
+ {
+     _logger.LogDebug("Iniciando CriarEventoAsync ");
+
+     var param = new DynamicParameters();
+     param.Add("@Titulo", eventoDto.Titulo);
+     param.Add("@DataInicio", eventoDto.DataInicio);
+     param.Add("@DataFim", eventoDto.DataFim);
+     param.Add("@Observacao", eventoDto.Observacao);
+
+    await using var dbConnection = CreateDbConnection();
+
+    var result = await dbConnection.ExecuteScalarAsync<int>(
+      @"INSERT INTO [tabela][Evento] 
+            (Titulo, DataInicio, DataFim,Observacao)
+       VALUES 
+          (@Titulo,@DataInicio,@DataFim, @Observacao)", param
+    );
+    _logger.LogDebug("Finalizando CriarEventoAsync");
+}
+
+ public async Task<EventoDto> RetornaEventoIdAsync(long id)
+ {
+     _logger.LogDebug("Iniciando RetornaEventoIdAsync");
+
+     var param = new DynamicParameters();
+     param.Add("@Id", id);
+
+     await using var dbConnection = CreateDbConnection();
+     var evento = await dbConnection.QueryFirstOrDefaultAsync<EventoDto>(
+         @"SELECT
+            Titulo, 
+            DataInicio, 
+            DataFim,
+            Observacao
+         FROM [tabela][Evento] 
+         WHERE Id = @Id", param 
+     );
+    _logger.LogDebug("Finalizando CriarEventoAsync");
+ }
+
+
+ public async Task<EventoDto> AtualizaEventoIdAsync(long id)
+ {
+     _logger.LogDebug("Iniciando AtualizaEventoIdAsync");
+
+     var param = new DynamicParameters();
+     param.Add("@Id", id);
+   param.Add("@Titulo", eventoDto.Titulo);
+     param.Add("@DataInicio", eventoDto.DataInicio);
+     param.Add("@DataFim", eventoDto.DataFim);
+     param.Add("@Observacao", eventoDto.Observacao);
+
+     await using var dbConnection = CreateDbConnection();
+     var evento = await dbConnection.QueryFirstOrDefaultAsync<EventoDto>(
+         @"UPDATE [tabela][Evento] 
+             SET 
+                Titulo = @Titulo, 
+                DataInicio = @DataInicio, 
+                DataFim = @DataFim,
+                Observacao = @Observacao
+            WHERE Id = @Id", param 
+     );      
+    _logger.LogDebug("Finalizando AtualizaEventoIdAsync");
+ }
+
+  public async Task<EventoDto> DeletaEventoIdAsync(long id)
+ {
+     _logger.LogDebug("Iniciando DeletaEventoIdAsync");
+
+     var param = new DynamicParameters();
+     param.Add("@Id", id);
+
+     await using var dbConnection = CreateDbConnection();
+     var evento = await dbConnection.QueryFirstOrDefaultAsync<EventoDto>(
+          @"DELETE FROM [tabela][Evento] 
+            WHERE Id = @Id", param 
+     );
+     _logger.LogDebug("Finalizando DeletaEventoIdAsync");
+ }
