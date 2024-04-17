@@ -1,0 +1,25 @@
+ public async Task<Result> CriarEventoAsync(EventoDto eventoDto)
+ { 
+    var criandoEvento = await _repositorio.CriarEventoAsync(eventoDto);
+     return result.Ok();
+ }
+
+  public async Task<Result> RetornaEventoIdAsync(long id)
+ { 
+    var retornandoEvento = await _repositorio.RetornaEventoIdAsync(id); 
+    return result.Ok();
+ }
+
+
+ public async Task<Result> AtualizaEventoIdAsync(long id)
+ { 
+    var atualizandoEvento = await _repositorio.AtualizaEventoIdAsync(id); 
+    return result.Ok();
+ }
+
+
+ public async Task<Result> DeletaEventoIdAsync(long id)
+ { 
+    var deletandoEvento = await _repositorio.DeletaEventoIdAsync(id); 
+    return result.Ok();
+ }
