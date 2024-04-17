@@ -1,0 +1,31 @@
+ [HttpPost("Create")]
+ public async Task<IActionResult> CriandoEventoAsync ([FromBody]EventoDto eventoDto)
+ {
+    //validar dto
+     var criaEvento = service.CriarEventoAsync(eventoDto);
+     return criaEvento;
+ }
+
+ [HttpGet("{id}")]
+ public async Task<Result> RetornandoEventoIdAsync([FromRoute]long id)
+ {
+    //validar id
+    var retornaEvento = await _service.RetornaEventoIdAsync(id);
+    return retornaEvento;
+ }
+
+ [HttpPut("{id}")]
+ public async Task<Result> AtualizandoEventoIdAsync([FromRoute]long id)
+ {
+    //validar id
+    var atualizaEvento =  await _service.AtualizaEventoIdAsync(id);
+    return atualizaEvento;
+ }
+
+ [HttpDelete("{id}")]
+ public async Task<Result> DeletandoEventoIdAsync([FromRoute]long id)
+ {
+   //validar id
+    var deletaEvento = await _service.DeletaEventoIdAsync(id);
+    return deletaEvento;
+ }
